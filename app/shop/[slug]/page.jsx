@@ -28,25 +28,20 @@ const ProductDetails = ({ params }) => {
 
   //Variables
   const [activeIndex, setActiveIndex] = useState(0);
+  let currentIndex = activeIndex;
   const totalImages = product.images.length;
   const lastIndex = totalImages - 1;
 
   //Show next image
   const nextImg = () => {
-    if (activeIndex == lastIndex) {
-      setActiveIndex(0);
-    } else {
-      setActiveIndex(activeIndex + 1);
-    }
+    currentIndex = currentIndex == lastIndex ? 0 : currentIndex + 1;
+    setActiveIndex(currentIndex);
   };
 
   //Show previous image
   const prevImg = () => {
-    if (activeIndex == 0) {
-      setActiveIndex(lastIndex);
-    } else {
-      setActiveIndex(activeIndex - 1);
-    }
+    currentIndex = currentIndex == 0 ? lastIndex : currentIndex - 1;
+    setActiveIndex(currentIndex);
   };
 
   return (
