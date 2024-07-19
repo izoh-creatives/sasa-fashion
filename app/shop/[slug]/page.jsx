@@ -27,7 +27,7 @@ const ProductDetails = ({ params }) => {
   }
 
   //Variables
-  let [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
   const totalImages = product.images.length;
   const lastIndex = totalImages - 1;
 
