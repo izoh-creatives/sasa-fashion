@@ -14,7 +14,7 @@ const Cta = () => {
           customClass={styles.btn}
         />
       </div>
-      <img src="/hero.png" className={styles.img} />
+      <img src="/hero.png" alt="Fashion goodies" className={styles.img} />
     </div>
   );
 };

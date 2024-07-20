@@ -50,7 +50,11 @@ const ProductDetails = ({ params }) => {
       <div className={styles.details}>
         {/* Images */}
         <div className={styles.images}>
-          <img src={product.images[activeIndex]} className={styles.img} />
+          <img
+            src={product.images[currentIndex]}
+            alt={product.title}
+            className={styles.img}
+          />
           {totalImages > 1 && (
             <div className={styles.icons}>
               <div onMouseDown={prevImg} className={styles.icon}>
