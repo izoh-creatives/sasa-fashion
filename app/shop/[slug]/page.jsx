@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
@@ -15,6 +15,8 @@ import RelatedProducts from "@/app/components/shop/RelatedProducts";
 import NotFound from "../search/not-found";
 
 const ProductDetails = ({ params }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   //Get slug
   const { slug } = params;
 
@@ -27,21 +29,17 @@ const ProductDetails = ({ params }) => {
   }
 
   //Variables
-  const [activeIndex, setActiveIndex] = useState(0);
-  let currentIndex = activeIndex;
   const totalImages = product.images.length;
   const lastIndex = totalImages - 1;
 
   //Show next image
   const nextImg = () => {
-    currentIndex = currentIndex == lastIndex ? 0 : currentIndex + 1;
-    setActiveIndex(currentIndex);
+    setActiveIndex(activeIndex == lastIndex ? 0 : activeIndex + 1);
   };
 
   //Show previous image
   const prevImg = () => {
-    currentIndex = currentIndex == 0 ? lastIndex : currentIndex - 1;
-    setActiveIndex(currentIndex);
+    setActiveIndex(activeIndex == 0 ? lastIndex : activeIndex - 1);
   };
 
   return (
@@ -51,7 +49,7 @@ const ProductDetails = ({ params }) => {
         {/* Images */}
         <div className={styles.images}>
           <img
-            src={product.images[currentIndex]}
+            src={product.images[activeIndex]}
             alt={product.title}
             className={styles.img}
           />
