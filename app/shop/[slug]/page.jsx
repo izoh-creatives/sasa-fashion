@@ -34,12 +34,16 @@ const ProductDetails = ({ params }) => {
 
   //Show next image
   const nextImg = () => {
-    setActiveIndex(activeIndex == lastIndex ? 0 : activeIndex + 1);
+    activeIndex == lastIndex
+      ? setActiveIndex(0)
+      : setActiveIndex(activeIndex + 1);
   };
 
   //Show previous image
   const prevImg = () => {
-    setActiveIndex(activeIndex == 0 ? lastIndex : activeIndex - 1);
+    activeIndex == 0
+      ? setActiveIndex(lastIndex)
+      : setActiveIndex(activeIndex - 1);
   };
 
   return (
