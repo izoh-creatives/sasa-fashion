@@ -9,7 +9,7 @@ const Copyright = () => {
         Sasa Fashion
       </Link>
       .All Rights Reserved.Web by
-      <Link href="https://izohcreatives.vercel.app/" className={styles.link}>
+      <Link href="https://www.izohcreatives.co.ke/" className={styles.link}>
         Izoh Creatives
       </Link>
     </p>
